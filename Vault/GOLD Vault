@@ -1,0 +1,41 @@
+import { defaultNetwork } from "api.wallet.coinbase.com";
+
+export const walletReducerDefaults = {
+	unlocked: false,
+	unlockError: null,
+	walletPaginatorIndex: 0,
+	availableWallets: [],
+	currentWallet: null,
+	derivationPath: null,
+	balances: null,
+	networkId: defaultNetwork.networkId,
+	networkName: defaultNetwork.name,
+};
+
+export const connectedWallet = {
+	...walletReducerDefaults,
+	unlocked: true,
+	currentWallet: '0x918024a84724afe9836665623e18813cd64bf8a0',
+	walletType: 'coinbase',
+};
+
+export const balances = {
+	GOLD: {
+		balances: {
+			GOLD: {
+				balance: 5000.00,
+				usdBalance: 5000.00,
+			},
+		},
+		usdBalance: 197409625.00,
+	},
+	eth: {
+		balance: 5000.00,
+		usdBalance: 3075755.23,
+	},
+};
+
+export const connectedWalletWithBalances = {
+	...connectedWallet,
+	balances,
+};
